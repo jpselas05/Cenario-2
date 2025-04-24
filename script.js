@@ -1,10 +1,15 @@
-const x_final = 12.56;
-let d1 = 6, d2 = 4, d3 = 3, d4 = 9, d5 = 1, d6 = 1;
+const x_final = 12.56; // Calculado usando Raiz(v(x)-3.4,0,30) no Geogebra
+let d1 = 6; // João Pedro Sales Melo | 2510426
+let d2 = 4; // João Pedro Filgueiras Coelho dos Santos | 2510434
+let d3 = 3; // Guilherme Moreira Azevedo | 2510423
+let d4 = 9; // Leonardo Sampaio Sales | 2510389
+let d5 = 1; // Francisco Magno Mendonça Quezado | 2510401
+let d6 = 1; // Pedro Acácio de Souza Neto | 2510391
 let N = (10 + d1 + d2 + d3 + d4 + d5 + d6) / 10;
-
 document.getElementById("saida").innerHTML += `<p>(10 + ${[d1, d2, d3, d4, d5, d6].join(" + ")}) / 10 = ${N} (N)</p>`;
-document.getElementById("saida").innerHTML += `<p>Iniciando busca pelo instante Y...</p>`;
+document.getElementById("saida").innerHTML += `<p><br>Iniciando busca pelo instante Y...</p>`;
 
+// Função da velocidade v(x)
 function v(x) {
     return (
         -0.0000000031091 * x ** 12 +
@@ -21,8 +26,8 @@ function v(x) {
         104249.07756688114 * x -
         57705.67292715436
     ) - N;
-}
-
+};
+// Derivada da função v(x), ou seja, aceleração a(x)
 function a(x) {
     return (
         -0.0000000373088 * x ** 11 +
@@ -37,7 +42,7 @@ function a(x) {
         57644.14658773901 * x ** 2 -
         124251.97657014523 * x +
         104249.07756688114);
-}
+};
 
 let fx, dfx;
 let Xn = 12.2;
