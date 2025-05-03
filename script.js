@@ -47,13 +47,14 @@ function a(x) {
 let fx, dfx;
 let Xn = 12.2;
 let iteracoes = 0;
-
-while (Math.abs((Xn - x_final) / x_final) > 0.001 && iteracoes < 20) {
+let X_anterior
+while (Math.abs((Xn - x_final) / x_final) > 0.001 && iteracoes < 20 && Xn !== X_anterior) {
     fx = v(Xn);
     dfx = a(Xn);
+    X_anterior = Xn
     Xn = Xn - fx / dfx;
     iteracoes++;
-    document.getElementById("saida").innerHTML += `<p>Iteração ${iteracoes}: Xn = ${Xn.toFixed(6)}</p>`;
+    document.getElementById("saida").innerHTML += `<p>Iteração ${iteracoes}: Xn = ${Xn}</p>`;
 }
 
 document.getElementById("resultado").textContent = `Instante Y encontrado: ${Xn.toFixed(6)}s para velocidade de ${N} m/s`;
