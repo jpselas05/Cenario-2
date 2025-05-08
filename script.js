@@ -44,7 +44,7 @@ function a(x) {
 };
 
 let fx, dfx;
-let Xn = 12.5;
+let Xn = parseFloat(prompt("Qual o primeiro chute?"));
 let iteracoes = 0;
 let X_anterior
 while (Math.abs((Xn - x_final) / x_final) > 0.001 && iteracoes < 5) {
