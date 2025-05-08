@@ -7,11 +7,10 @@ let d5 = 1; // Francisco Magno Mendonça Quezado | 2510401
 let d6 = 1; // Pedro Acácio de Souza Neto | 2510391
 let N = (10 + d1 + d2 + d3 + d4 + d5 + d6) / 10;
 document.getElementById("saida").innerHTML += `<p>(10 + ${[d1, d2, d3, d4, d5, d6].join(" + ")}) / 10 = ${N} (N)</p>`;
-document.getElementById("saida").innerHTML += `<p><br>Iniciando busca pelo instante Y...</p>`;
 
 // Função da velocidade v(x)
 function v(x) {
-    return (
+    return ((
         -0.0000000031091 * x ** 12 +
         0.0000006207407 * x ** 11 -
         0.0000553931661 * x ** 10 +
@@ -25,7 +24,7 @@ function v(x) {
         62125.98828507261 * x ** 2 +
         104249.07756688114 * x -
         57705.67292715436
-    ) - N;
+    ) - N);
 };
 // Derivada da função v(x), ou seja, aceleração a(x)
 function a(x) {
@@ -45,10 +44,10 @@ function a(x) {
 };
 
 let fx, dfx;
-let Xn = 12.2;
+let Xn = 12.5;
 let iteracoes = 0;
 let X_anterior
-while (Math.abs((Xn - x_final) / x_final) > 0.001 && iteracoes < 20 && Xn !== X_anterior) {
+while (Math.abs((Xn - x_final) / x_final) > 0.001 && iteracoes < 5) {
     fx = v(Xn);
     dfx = a(Xn);
     X_anterior = Xn
